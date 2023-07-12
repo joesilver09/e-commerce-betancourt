@@ -631,6 +631,9 @@ body.dark-mode {
   --background-color: black;
 } */
 
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
 
 
 body.dark-mode{

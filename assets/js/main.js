@@ -245,7 +245,14 @@ document.addEventListener("DOMContentLoaded", function() {
   
   button.addEventListener("click", function() {
     body.classList.toggle("dark-mode");
+    
+    const icon = button.querySelector("i");
+    if (body.classList.contains("dark-mode")) {
+      icon.classList.remove("bx-moon");
+      icon.classList.add("bx-sun");
+    } else {
+      icon.classList.remove("bx-sun");
+      icon.classList.add("bx-moon");
+    }
   });
 });
-
-}
