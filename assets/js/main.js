@@ -1,12 +1,12 @@
-import loader from './components/loader.js'
-import showMenu from'./components/showMenu.js'
-import showCart from'./components/showCart.js'
-import cart from './components/cart.js'
-showMenu()
-showCart()
+import loader from "./components/loader.js";
+import showMenu from "./components/showMenu.js";
+import showCart from "./components/showCart.js";
+import cart from "./components/cart.js";
+showMenu();
+showCart();
 
 /*Ocultar loader*/
-loader()
+loader();
 //  Lista de productos
 let products = [
   {
@@ -230,9 +230,9 @@ function printProducts() {
   <span class="product__stock">Disponibles:${product.quantity}</span>
   <h3 class="product__title">${product.name}</h3>
 </div>
-</article>`
+</article>`;
   }
   productsHTML.innerHTML = classprod;
 }
-printProducts()
-cart(products,printProducts)
+printProducts();
+cart(products, printProducts);
