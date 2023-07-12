@@ -54,14 +54,25 @@ function cart(products, printProducts) {
   }
 
   function addToCart(id, qty = 1) {
-    const itemFinded = cart.find((i) => i.id === id);
-    if (itemFinded) {
-      itemFinded.qty += qty;
+    const product = products.find((p) => p.id === id);
+    const itemInCart = cart.find((item) => item.id === id);
+  
+    if (product && product.quantity >= qty) {
+      if (itemInCart) {
+        if (itemInCart.qty + qty <= product.quantity) {
+          itemInCart.qty += qty;
+        } else {
+          itemInCart.qty = product.quantity;
+        }
+      } else {
+        cart.push({ id, qty: Math.min(qty, product.quantity) });
+      }
+      printCart();
     } else {
-      cart.push({ id, qty });
+      swal("Inventario agotado")
     }
-    printCart();
   }
+  
   function removeFromCart(id, qty = 1) {
     const itemFinded = cart.find((i) => i.id === id);
     const result = itemFinded.qty - qty;
@@ -100,7 +111,7 @@ function cart(products, printProducts) {
     cart = [];
     printCart();
     printProducts();
-    window.alert("Gracias por su compra");
+    swal("Gracias por su compra");
   }
 
   printCart();
