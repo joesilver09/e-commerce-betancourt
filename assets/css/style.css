@@ -68,7 +68,8 @@ html {
 
 button,
 input,
-textarea {
+textarea
+{
   font-family: var(--body-font);
   font-size: var(--normal-font);
 }
@@ -212,29 +213,40 @@ button {
   color: var(--primary-color);
 }
 
-
 @media (max-width: 768px) {
- 
   .nav__menu {
     position: fixed;
     left: 0;
     width: 100%;
-    height: calc(max-content); /* Ajusta la altura restando los 60px desde abajo */
+    height: calc(
+      max-content
+    ); /* Ajusta la altura restando los 60px desde abajo */
     bottom: -100%; /* Inicialmente oculto debajo de la pantalla */
     padding: var(--sp-3) 0 var(--sp-2);
     background-color: var(--bg-color);
     z-index: var(--z-fixed);
-    transition: clip-path 0.5s ease-in-out ;
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%); /* Establece un clip-path inicial que oculta el menú */ 
+    transition: clip-path 0.5s ease-in-out;
+    clip-path: polygon(
+      0% 100%,
+      100% 100%,
+      100% 100%,
+      0% 100%
+    ); /* Establece un clip-path inicial que oculta el menú */
   }
-  
+
   .show--menu {
     bottom: 60px; /* Ajusta el valor para mostrar el menú desde más arriba */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Define el clip-path para mostrar el menú */
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%
+    ); /* Define el clip-path para mostrar el menú */
   }
-.hide--menu {
-  bottom: var(--header-height);
-  }}
+  .hide--menu {
+    bottom: var(--header-height);
+  }
+}
 .nav__menu .btn--close {
   position: absolute;
   top: var(--sp-0-75);
@@ -291,7 +303,7 @@ button {
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-.show--notify{
+.show--notify {
   opacity: 1;
   visibility: visible;
 }
@@ -312,16 +324,22 @@ button {
   border-radius: 1rem;
   transition: box-shadow 0.3s ease-in-out;
 }
-.product:hover{ box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 10px -1px, rgba(0, 0, 0, 0.3) 0px 10px 10px -1px;}
+.product:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 10px -1px,
+    rgba(0, 0, 0, 0.3) 0px 10px 10px -1px;
+}
 
 .product__image {
   padding: var(--sp-1);
-  background: linear-gradient(to top, rgba(141, 127, 127, 0.651), var(--card-color))
+  background: linear-gradient(
+    to top,
+    rgba(141, 127, 127, 0.651),
+    var(--card-color)
+  );
 }
 
 .product__image img {
-  transition: transform 0.3s ease-in-out,
-    filter 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 .product:hover img {
@@ -554,38 +572,96 @@ button {
   padding-bottom: var(--header-height);
 }
 
-@media(min-width: 768px){
-  :root{
-    --header-height:75px
-    }
-  .header{
+@media (min-width: 768px) {
+  :root {
+    --header-height: 75px;
+  }
+  .header {
     top: 0;
     bottom: unset;
   }
-  .nav__list{
+  .nav__list {
     display: flex;
     align-items: center;
   }
-  .nav__menu
-  .btn--close,
-  .btn--menu{
+  .nav__menu .btn--close,
+  .btn--menu {
     display: none;
   }
 
-.main{
-  padding-top: var(--header-height);
-}
-.product__title{
-  font-size: var(--small-font);
-}
-.cart{
-  top: var(--header-height);
-}
+  .main {
+    padding-top: var(--header-height);
+  }
+  .product__title {
+    font-size: var(--small-font);
+  }
+  .cart {
+    top: var(--header-height);
+  }
 }
 
-@media(min-width:1024px){
+@media (min-width: 1024px) {
   .section--title,
-  .container{
+  .container {
     margin: 0 auto;
   }
+}
+
+/* Dark Mode */
+
+/* body {
+  transition: background-color 0.9s ease;
+}
+
+.dark-mode {
+  background-color: black;
+  :root{
+
+  --primary-color: hsl(298, 100%, 29%);
+  --body-color: hsl(206, 4%, 97%);
+  --text-color: hsl(0, 0%, 20%);
+  --title-color: hsl(0, 0%, 10%);
+  --bg-color: hsl(0, 0%, 3%);
+  --card-color: hsl(0, 0%, 90%);
+  }
+}
+
+body.dark-mode {
+  --primary-color: black;
+  --background-color: black;
+} */
+
+
+
+body.dark-mode{
+  --primary-color: hsl(0, 61%, 53%);
+  --body-color: hsl(261, 74%, 6%);
+  --text-color: hsla(0, 0%, 77%, 0.89);
+  --title-color: hsl(0, 0%, 87%);
+  --bg-color: hsl(263, 83%, 14%);
+  --card-color: hsl(278, 87%, 9%);
+}
+body.dark
+
+body.dark-mode footer{
+  color: rgb(223, 223, 223);
+  background-color:rgb(42, 28, 56);
+}
+body.dark-mode .footer__title{
+  color: rgb(196, 164, 255);
+}
+
+
+body.dark-mode i{
+  color: rgb(224, 217, 217);
+}
+body.dark-mode .cart__footer{
+  background-color: rgb(19, 3, 34);
+}
+
+body.dark-mode .footer__link{
+  background-color: black;
+}
+body.dark-mode .footer__link:hover{
+  background-color:  hsl(0, 60%, 49%);;
 }

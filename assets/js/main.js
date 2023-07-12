@@ -236,3 +236,16 @@ function printProducts() {
 }
 printProducts();
 cart(products, printProducts);
+
+
+// Dark Mode
+document.addEventListener("DOMContentLoaded", function() {
+  const button = document.querySelector(".night__btn");
+  const body = document.body;
+  
+  button.addEventListener("click", function() {
+    body.classList.toggle("dark-mode");
+  });
+});
+
+}

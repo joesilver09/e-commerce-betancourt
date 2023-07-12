@@ -57,22 +57,27 @@ function cart(products, printProducts) {
     const product = products.find((p) => p.id === id);
     const itemInCart = cart.find((item) => item.id === id);
   
-    if (product && product.quantity >= qty) {
+    if (product) {
       if (itemInCart) {
-        if (itemInCart.qty + qty <= product.quantity) {
+        const availableQty = product.quantity - itemInCart.qty;
+        if (qty <= availableQty) {
           itemInCart.qty += qty;
+          printCart();
         } else {
-          itemInCart.qty = product.quantity;
+          swal("Opps", `No puedes agregar más de ${itemInCart.qty} unidades de esto.`, "error");
         }
       } else {
-        cart.push({ id, qty: Math.min(qty, product.quantity) });
+        if (qty <= product.quantity) {
+          cart.push({ id, qty });
+          printCart();
+        } else {
+          swal("Agotado", `Parece que esto se ha vendido bien`, "error");
+        }
       }
-      printCart();
     } else {
-      swal("Inventario agotado")
+      swal("Opps", "El producto no existe en el inventario.", "error");
     }
   }
-  
   function removeFromCart(id, qty = 1) {
     const itemFinded = cart.find((i) => i.id === id);
     const result = itemFinded.qty - qty;
@@ -111,7 +116,7 @@ function cart(products, printProducts) {
     cart = [];
     printCart();
     printProducts();
-    swal("Gracias por su compra");
+    swal("Gracias por su compra","Su compra ha sido satisfactiora","success");
   }
 
   printCart();

@@ -13,9 +13,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="lib/sweet-alert.min.js" defer></script>
-<link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
     <script src="assets/js/main.js" type="module" defer></script>
+    <!-- Better alerts -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   
   </head>
   <body>
@@ -54,13 +54,21 @@
           </ul>
         </div>
         <div class="nav__buttons">
+          <!-- darkmode -->
+          <button type="button" class="night__btn" onclick="toggleDarkMode()">
+            <i class="bx bx-moon"></i>
+          </button>
+          
+          
+
+          <!-- end of darkmode -->
           <button type="button" class="nav__btn btn--cart">
             <i class="bx bx-shopping-bag"></i>
             <span class="notify">0</span>
           </button>
           <button type="button" class="nav__btn btn--menu">
             <i class="bx bx-grid-alt"></i>
-          </button>
+          </button>  
         </div>
       </nav>
     </header>
