@@ -1,5 +1,10 @@
 import loader from './components/loader.js'
 import showMenu from'./components/showMenu.js'
+import showCart from'./components/showCart.js'
+import cart from './components/cart.js'
+showMenu()
+showCart()
+
 /*Ocultar loader*/
 loader()
 //  Lista de productos
@@ -214,12 +219,12 @@ function printProducts() {
 <div class="product__image">
   <img
     src=${product.image}
-    alt="Producto Base"
+    alt="${product.name}"
   />
 </div>
 <div class="product__content">
-  <button type="button" class="product__btn add--to--cart">
-    <i class="bx bx-cart-add" id='${product.id}'></i>
+  <button type="button" class="product__btn add--to--cart" data-id="${product.id}">
+    <i class="bx bx-cart-add"></i>
   </button>
   <span class="product__price">$${product.price}</span>
   <span class="product__stock">Disponibles:${product.quantity}</span>
@@ -230,4 +235,4 @@ function printProducts() {
   productsHTML.innerHTML = classprod;
 }
 printProducts()
-showMenu()
+cart(products,printProducts)
