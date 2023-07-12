@@ -215,21 +215,28 @@ button {
 @media (max-width: 768px) {
   .nav__menu {
     position: fixed;
-    bottom: var(--header-height);
-    left: -100%;
+    left: 0;
     width: 100%;
-    height: calc(max-content - var(--header-height));
+    height: calc(max-content); /* Ajusta la altura restando los 60px desde abajo */
+    bottom: -100%; /* Inicialmente oculto debajo de la pantalla */
     padding: var(--sp-3) 0 var(--sp-2);
     background-color: var(--bg-color);
     z-index: var(--z-fixed);
-    transition: left.5s ease-in-out;
+    transition: clip-path 0.5s ease-in-out ;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%); /* Establece un clip-path inicial que oculta el menú */
   }
-}
+  
+  .show--menu {
+    bottom: 60px; /* Ajusta el valor para mostrar el menú desde más arriba */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); /* Define el clip-path para mostrar el menú */
+  }
+.hide--menu {
+  bottom: var(--header-height);
+  }}
 .nav__menu .btn--close {
   position: absolute;
   top: var(--sp-0-75);
   right: var(--sp-0-75);
-  border: 1px solid;
   width: var(--sp-1-5);
   height: var(--sp-1-5);
   font-size: var(--medium-font);
@@ -281,9 +288,6 @@ button {
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
-.show--menu {
-  left: 0;
-}
 
 .products__container {
   display: grid;
@@ -294,15 +298,6 @@ button {
 .products__title {
   margin-bottom: var(--sp-2);
 }
-/* 
-.products {
-  padding-top: 3rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  max-width:1024px;
-  margin: 0px;
-  gap: 1rem;
-}*/
 
 .product {
   overflow: hidden;

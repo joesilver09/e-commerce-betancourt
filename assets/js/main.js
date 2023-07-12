@@ -1,4 +1,5 @@
 import loader from './components/loader.js'
+import showMenu from'./components/showMenu.js'
 /*Ocultar loader*/
 loader()
 //  Lista de productos
@@ -229,4 +230,4 @@ function printProducts() {
   productsHTML.innerHTML = classprod;
 }
 printProducts()
-
+showMenu()
