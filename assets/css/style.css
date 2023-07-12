@@ -385,6 +385,7 @@ button {
   z-index: var(--z-fixed);
   transition: right 0.7s ease-in-out;
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 25%);
+  padding-bottom: 60px;
 }
 
 .show--cart {
@@ -406,6 +407,7 @@ button {
 }
 
 .cart__title {
+  padding-left: var(--sp-1);
   grid-column: span 2;
 }
 
