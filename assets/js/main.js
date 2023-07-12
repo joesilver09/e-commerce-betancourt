@@ -1,3 +1,7 @@
+import loader from './components/loader.js'
+/*Ocultar loader*/
+loader()
+//  Lista de productos
 let products = [
   {
     id: 1,
@@ -200,26 +204,29 @@ let products = [
 ];
 
 //  FUNCION MOSTRAR PRODUCTOS
+function printProducts() {
+  const productsHTML = document.querySelector(".products__container");
+  let classprod = "";
+  for (const product of products) {
+    classprod += `
+<article class="product">
+<div class="product__image">
+  <img
+    src=${product.image}
+    alt="Producto Base"
+  />
+</div>
+<div class="product__content">
+  <button type="button" class="product__btn add--to--cart">
+    <i class="bx bx-cart-add" id='${product.id}'></i>
+  </button>
+  <span class="product__price">$${product.price}</span>
+  <span class="product__stock">Disponibles:${product.quantity}</span>
+  <h3 class="product__title">${product.name}</h3>
+</div>
+</article>`
+  }
+  productsHTML.innerHTML = classprod;
+}
+printProducts()
 
-// function printProducts() {
-//   const productsHTML = document.querySelector(".products");
-//   let classprod = "";
-//   for (const product of products) {
-//     classprod += `
-//       <div class="product">
-//         <div class="product__img">
-//           <img src="${product.image}" alt="imagen"
-//         </div>
-//         <div class="product__info">
-//             <p>${product.name}
-//                 <span><b>Stock</b>: ${product.quantity} </span>
-
-//                 <p>$${product.price}</p>
-//                 <i class'bx bx-plus' id='${product.id}'></i>
-//             </p>
-//         </div>
-//       </div>`;
-//   }
-//   productsHTML.innerHTML = classprod;
-// }
-// printProducts()

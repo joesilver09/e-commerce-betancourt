@@ -4,20 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-commerce</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,700;1,900&family=Unbounded:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,700;1,900&family=Poppins:ital,wght@1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main.js" type="module" defer></script>
   </head>
   <body>
     <!-- Loader -->
-    <div class="loader loader--hidden">
+    <div class="loader">
       <div class="loader__container">
         <span></span>
       </div>
@@ -64,24 +61,8 @@
     <!--Main-->
     <main class="main">
       <section class="products section">
-        <h2 class="products__title section--title">Vehiculos</h2>
+        <h2 class="products__title section--title">Productos</h2>
         <div class="products__container container">
-          <article class="product">
-            <div class="product__image">
-              <img
-                src="https://png.pngtree.com/png-clipart/20180613/ourmid/pngtree-stylish-luxury-red-sports-car-simulation-illustration-png-image_4484890.png"
-                alt="Producto Base"
-              />
-            </div>
-            <div class="product__content">
-              <button type="button" class="product__btn add--to--cart">
-                <i class="bx bx-cart-add"></i>
-              </button>
-              <span class="product__price">$257000</span>
-              <span class="product__stock">Disponibles:10</span>
-              <h3 class="product__title">Veretta Titan Sport 2023</h3>
-            </div>
-          </article>
         </div>
       </section>
     </main>
@@ -150,8 +131,7 @@
           <div class="footer__left">
             <h3 class="footer__title">Sobre mí</h3>
             <p class="footer__text">
-              Hola mi nombre es Juan Betancourt, me gusta ser mi mejor versión
-              cada dia (Kaizen), meditación, ejercicio, conocimiento 🙌
+              Mi nombre es <span>Juan Betancourt</span>, y me gusta la idea de ser mi mejor versión cada día, meditación, ejercicio, conocimiento, en pocas palabras mi futuro.
             </p>
           </div>
           <div class="footer__right">
@@ -176,7 +156,7 @@
           </div>
         </div>
         <div class="footer__bottom">
-          <p>Todos los derechos reservados</p>
+          <p>Todos los derechos reservados &copy;2023</p>
         </div>
       </div>
     </footer>
