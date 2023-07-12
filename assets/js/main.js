@@ -19,6 +19,16 @@ let products = [
     quantity: 5,
     description:
       "Esta camiseta básica presenta un corte regular y un cuello redondo clásico. Es ideal para el uso diario y se puede combinar con una amplia variedad de looks.",
+  },{
+    id: 99,
+    name: "Venelly Academlo Sport 2023",
+    price: 237000,
+    image:
+      "https://png.pngtree.com/png-clipart/20180613/ourmid/pngtree-stylish-luxury-red-sports-car-simulation-illustration-png-image_4484890.png",
+    category: "Vehiculo",
+    quantity: 2,
+    description:
+      "Solo existen 2 en el mundo",
   },
   {
     id: 2,
@@ -173,6 +183,17 @@ let products = [
     quantity: 7,
     description:
       "Este sweater de cuello alto está hecho de una mezcla suave de lana y acrílico para mayor comodidad y calidez. Es ideal para un look elegante y cálido.",
+  },
+  {
+    id: 35,
+    name: "PC Milkyway XYZ para programmar a otro nivel",
+    price: 9780,
+    image:
+      "https://storage-asset.msi.com/global/picture/image/feature/mb/Z790/mpg_z790_edge_wifi_ddr4/msi-z790-edge-wifi-ddr4-motherboard-and-componts.png",
+    category: "Electronicos",
+    quantity: 12,
+    description:
+      "Bienvenido a la mejor experiencia en PCs",
   },
   {
     id: 16,
