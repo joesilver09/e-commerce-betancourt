@@ -1,4 +1,3 @@
-
 let products = [
   {
     id: 1,
@@ -200,7 +199,6 @@ let products = [
   },
 ];
 
-
 //  FUNCION MOSTRAR PRODUCTOS
 
 // function printProducts() {
@@ -209,13 +207,13 @@ let products = [
 //   for (const product of products) {
 //     classprod += `
 //       <div class="product">
-//         <div class="product__img">    
+//         <div class="product__img">
 //           <img src="${product.image}" alt="imagen"
 //         </div>
 //         <div class="product__info">
-//             <p>${product.name} 
+//             <p>${product.name}
 //                 <span><b>Stock</b>: ${product.quantity} </span>
-                
+
 //                 <p>$${product.price}</p>
 //                 <i class'bx bx-plus' id='${product.id}'></i>
 //             </p>
