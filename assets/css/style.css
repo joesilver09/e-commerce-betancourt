@@ -223,7 +223,7 @@ button {
     ); /* Ajusta la altura restando los 60px desde abajo */
     bottom: -100%; /* Inicialmente oculto debajo de la pantalla */
     padding: var(--sp-3) 0 var(--sp-2);
-    background-color: var(--bg-color);
+    background-color: var(--card-color);
     z-index: var(--z-fixed);
     transition: clip-path 0.5s ease-in-out;
     clip-path: polygon(
@@ -292,7 +292,7 @@ button {
   height: 20px;
   background-color: var(--primary-color);
   font-size: var(--small-font);
-  color: var(--bg-color);
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -344,7 +344,7 @@ button {
 
 .product:hover img {
   transform: scale(1.1);
-  filter: brightness(105%);
+  filter: brightness(110%);
 }
 
 .product__content {
@@ -527,7 +527,8 @@ button {
 
 /* Footer */
 .footer {
-  background-color: var(--card-color);
+  background-color: var(--bg-color);
+  filter:saturate(80%)
 }
 
 .footer__container,
@@ -607,30 +608,6 @@ button {
   }
 }
 
-/* Dark Mode */
-
-/* body {
-  transition: background-color 0.9s ease;
-}
-
-.dark-mode {
-  background-color: black;
-  :root{
-
-  --primary-color: hsl(298, 100%, 29%);
-  --body-color: hsl(206, 4%, 97%);
-  --text-color: hsl(0, 0%, 20%);
-  --title-color: hsl(0, 0%, 10%);
-  --bg-color: hsl(0, 0%, 3%);
-  --card-color: hsl(0, 0%, 90%);
-  }
-}
-
-body.dark-mode {
-  --primary-color: black;
-  --background-color: black;
-} */
-
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
@@ -668,3 +645,10 @@ body.dark-mode .footer__link{
 body.dark-mode .footer__link:hover{
   background-color:  hsl(0, 60%, 49%);;
 }
+
+body.dark-mode .product:hover {
+  box-shadow: rgba(183, 86, 248, 0.301) 0px 0px 30px -1px,
+    rgba(252, 98, 252, 0.411) 0px 10px 20px -1px;
+}
+
+body.dark-mode .nav__menu{ background-color: rgb(19, 3, 34);}
