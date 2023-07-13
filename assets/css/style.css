@@ -208,9 +208,10 @@ button {
 }
 
 .logo--icon {
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   color: var(--primary-color);
+
 }
 
 @media (max-width: 768px) {
@@ -528,7 +529,6 @@ button {
 /* Footer */
 .footer {
   background-color: var(--bg-color);
-  filter:saturate(80%)
 }
 
 .footer__container,
@@ -585,6 +585,9 @@ button {
     display: flex;
     align-items: center;
   }
+  .nav__menu{
+    background-color: var(--bg-color);
+  }
   .nav__menu .btn--close,
   .btn--menu {
     display: none;
@@ -614,18 +617,17 @@ body {
 
 
 body.dark-mode{
-  --primary-color: hsl(0, 61%, 53%);
+  --primary-color:  hsl(0, 100%, 61%);;
   --body-color: hsl(261, 74%, 6%);
   --text-color: hsla(0, 0%, 77%, 0.89);
   --title-color: hsl(0, 0%, 87%);
-  --bg-color: hsl(263, 83%, 14%);
-  --card-color: hsl(278, 87%, 9%);
+  --bg-color: hsl(263, 71%, 12%);
+  --card-color: rgb(19, 3, 34);
 }
-body.dark
 
 body.dark-mode footer{
   color: rgb(223, 223, 223);
-  background-color:rgb(42, 28, 56);
+  background-color:rgb(31, 7, 54);
 }
 body.dark-mode .footer__title{
   color: rgb(196, 164, 255);
@@ -651,4 +653,3 @@ body.dark-mode .product:hover {
     rgba(252, 98, 252, 0.411) 0px 10px 20px -1px;
 }
 
-body.dark-mode .nav__menu{ background-color: rgb(19, 3, 34);}
