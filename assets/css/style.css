@@ -68,8 +68,7 @@ html {
 
 button,
 input,
-textarea
-{
+textarea {
   font-family: var(--body-font);
   font-size: var(--normal-font);
 }
@@ -211,10 +210,18 @@ button {
   width: 3.5rem;
   height: 3.5rem;
   color: var(--primary-color);
-
 }
 
+
+
 @media (max-width: 768px) {
+  .introduction__description{
+    font-size: var(--small-font);
+    text-align: center; /* Centra el texto */
+    max-width: 400px; /* Establece el máximo ancho en píxeles */
+    overflow: hidden; /* Oculta el texto que exceda el ancho del contenedor */
+    text-overflow: ellipsis;
+  }
   .nav__menu {
     position: fixed;
     left: 0;
@@ -227,22 +234,11 @@ button {
     background-color: var(--card-color);
     z-index: var(--z-fixed);
     transition: clip-path 0.5s ease-in-out;
-    clip-path: polygon(
-      0% 100%,
-      100% 100%,
-      100% 100%,
-      0% 100%
-    ); /* Establece un clip-path inicial que oculta el menú */
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
   }
-
   .show--menu {
-    bottom: 60px; /* Ajusta el valor para mostrar el menú desde más arriba */
-    clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      0% 100%
-    ); /* Define el clip-path para mostrar el menú */
+    bottom: 60px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
   .hide--menu {
     bottom: var(--header-height);
@@ -309,6 +305,48 @@ button {
   visibility: visible;
 }
 
+
+/* Page intro */
+
+.introduction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px; 
+}
+
+.introduction__name {
+  grid-column: 1 / span 2;
+  text-align: center;
+}
+.introduction__container,
+.introduction__image
+.introduction__description{
+  min-height: 200px;
+  min-width: 200px;
+  max-width: 400px ;
+  max-height: 400px;
+  background-color: var(--first-color);
+  grid-column: 2; 
+  grid-row: 2; 
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+.introduction__container{
+  padding: var(--sp-0-5);
+  border-radius: 50%;
+  background: linear-gradient(
+    to top,
+    var(--primary-color),
+    var(--card-color));
+}
+.introduction__description{
+  padding-left: 20px;
+}
+
+
+/* Products */
 .products__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -318,7 +356,6 @@ button {
 .products__title {
   margin-bottom: var(--sp-2);
 }
-
 .product {
   overflow: hidden;
   background-color: var(--bg-color);
@@ -455,6 +492,7 @@ button {
   grid-template-rows: 1fr;
   column-gap: var(--sp-1);
   margin-bottom: var(--sp-1);
+  font-size: 15px;
 }
 
 .article__image {
@@ -577,6 +615,7 @@ button {
   :root {
     --header-height: 75px;
   }
+  .introduction__name{padding-top: 75px;}
   .header {
     top: 0;
     bottom: unset;
@@ -585,13 +624,14 @@ button {
     display: flex;
     align-items: center;
   }
-  .nav__menu{
+  .nav__menu {
     background-color: var(--bg-color);
   }
   .nav__menu .btn--close,
   .btn--menu {
     display: none;
   }
+
 
   .main {
     padding-top: var(--header-height);
@@ -606,7 +646,8 @@ button {
 
 @media (min-width: 1024px) {
   .section--title,
-  .container {
+  .container,
+  .introduction{
     margin: 0 auto;
   }
 }
@@ -615,9 +656,8 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-
-body.dark-mode{
-  --primary-color:  hsl(0, 100%, 61%);;
+body.dark-mode {
+  --primary-color: hsl(0, 100%, 61%);
   --body-color: hsl(261, 74%, 6%);
   --text-color: hsla(0, 0%, 77%, 0.89);
   --title-color: hsl(0, 0%, 87%);
@@ -625,31 +665,29 @@ body.dark-mode{
   --card-color: rgb(19, 3, 34);
 }
 
-body.dark-mode footer{
+body.dark-mode footer {
   color: rgb(223, 223, 223);
-  background-color:rgb(31, 7, 54);
+  background-color: rgb(31, 7, 54);
 }
-body.dark-mode .footer__title{
+body.dark-mode .footer__title {
   color: rgb(196, 164, 255);
 }
 
-
-body.dark-mode i{
+body.dark-mode i {
   color: rgb(224, 217, 217);
 }
-body.dark-mode .cart__footer{
+body.dark-mode .cart__footer {
   background-color: rgb(19, 3, 34);
 }
 
-body.dark-mode .footer__link{
+body.dark-mode .footer__link {
   background-color: black;
 }
-body.dark-mode .footer__link:hover{
-  background-color:  hsl(0, 60%, 49%);;
+body.dark-mode .footer__link:hover {
+  background-color: hsl(0, 60%, 49%);
 }
 
 body.dark-mode .product:hover {
   box-shadow: rgba(183, 86, 248, 0.301) 0px 0px 30px -1px,
     rgba(252, 98, 252, 0.411) 0px 10px 20px -1px;
 }
-
