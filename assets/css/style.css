@@ -641,7 +641,9 @@ button {
   .main {
     padding-top: var(--header-height);
   }
-  #productos{scroll-margin-top: 75px}
+  #productos {
+    scroll-margin-top: 75px;
+  }
   .product__title {
     font-size: var(--small-font);
   }
@@ -696,4 +698,104 @@ body.dark-mode .footer__link:hover {
 body.dark-mode .product:hover {
   box-shadow: rgba(183, 86, 248, 0.301) 0px 0px 30px -1px,
     rgba(252, 98, 252, 0.411) 0px 10px 20px -1px;
+}
+
+/* Modal */
+.modal {
+  z-index: var(--z-modal);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s 0.9s;
+  --transform: translateY(-100vh);
+  --transition: transform 0.8s;
+  font-size: 16px;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.6s;
+  --transform: translateY(0);
+  --transition: transform 0.8s 0.8s;
+}
+
+.modal__container {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 3em 2.5em;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+body.dark-mode .modal__container {
+  background-color: rgb(14, 14, 14);
+}
+
+.modal__title {
+  font-size: 2rem;
+}
+
+.modal__paragraph {
+  margin-bottom: 10px;
+  font-size: 14px ;
+}
+
+.modal__img {
+  width: 90%;
+  max-width: 300px;
+}
+
+.modal__close {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: 1em 3em;
+  border: 1px solid;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 300;
+  transition: background-color 0.3s;
+}
+
+.modal__close:hover {
+  color: var(--primary-color);
+  background-color: #fff;
+}
+body.dark-mode .modal__close:hover {
+  background: linear-gradient(rgb(14, 14, 14), rgb(58, 1, 58));
+}
+
+.modal__box {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--primary-color);
+}
+.modal__btn {
+  width: 510px;
+  height: 50px;
+  color: whitesmoke;
+  background-color: rgb(14, 14, 14);
+  box-shadow: 0px 5px 20px var(--primary-color);
+}
+
+.modal__btn:hover {
+  background-color: var(--primary-color);
 }

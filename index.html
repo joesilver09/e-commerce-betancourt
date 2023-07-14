@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/main.js" type="module" defer></script>
     <!-- Icon -->
-    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="icon" type="image/png" href="assets/icon.png" />
     <!-- Better alerts -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
@@ -47,6 +47,22 @@
         />
       </div>
     </div>
+    <!-- Clicker Modal -->
+    <div class="modal__box">
+      <button type="button" class="modal__btn">Presioname para más información</button>
+    </div>
+    <!-- Modal -->
+    <section class="modal">
+      <div class="modal__container">
+        <img src="" class="modal__img" />
+        <h2 class="modal__title">Modal</h2>
+        <p class="modal__paragraph">
+        Haz llegado al lugar correcto!
+        La ropa te permite expresar tu estilo y personalidad. Los vehículos brindan comodidad y libertad de movimiento. Los electrodomésticos simplifican tus tareas diarias. ¡Mejora tu vida con productos que se adaptan a tus necesidades!
+        </p>
+        <a href="#" class="modal__close">Cerrar Modal</a>
+      </div>
+    </section>
     <!-- Loader -->
     <div class="loader">
       <div class="loader__container">
@@ -121,7 +137,9 @@
               <span class="cart__count--item">0</span>
             </div>
             <div class="cart__total">
-              <span class="cart__total--text">Total$<span class="cart__total--item">0</span></span>
+              <span class="cart__total--text"
+                >Total$<span class="cart__total--item">0</span></span
+              >
             </div>
             <button type="button" class="cart__btn btn--buy">Comprar</button>
           </div>
@@ -144,17 +162,29 @@
             <h3 class="footer__title">Redes Sociales</h3>
             <ul class="footer__social">
               <li class="footer__item">
-                <a href="https://github.com/joesilver09" target="_blank" class="footer__link">
+                <a
+                  href="https://github.com/joesilver09"
+                  target="_blank"
+                  class="footer__link"
+                >
                   <i class="bx bxl-github"></i>
                 </a>
               </li>
               <li class="footer__item">
-                <a href="https://www.instagram.com/joesilver09/" target="_blank" class="footer__link">
+                <a
+                  href="https://www.instagram.com/joesilver09/"
+                  target="_blank"
+                  class="footer__link"
+                >
                   <i class="bx bxl-instagram"></i>
                 </a>
               </li>
               <li class="footer__item">
-                <a href="https://www.linkedin.com/in/joesilver09/" target="_blank" class="footer__link">
+                <a
+                  href="https://www.linkedin.com/in/joesilver09/"
+                  target="_blank"
+                  class="footer__link"
+                >
                   <i class="bx bxl-linkedin"></i>
                 </a>
               </li>
