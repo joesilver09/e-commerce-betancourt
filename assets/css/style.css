@@ -641,6 +641,7 @@ button {
   .main {
     padding-top: var(--header-height);
   }
+  #productos{scroll-margin-top: 75px}
   .product__title {
     font-size: var(--small-font);
   }
