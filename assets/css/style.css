@@ -121,7 +121,8 @@ button {
   padding: var(--sp-2) 0 var(--sp-1-5);
 }
 .section--title,
-.container {
+.container,
+.introduction {
   max-width: 1024px;
   margin: 0 1rem;
 }
@@ -212,10 +213,8 @@ button {
   color: var(--primary-color);
 }
 
-
-
 @media (max-width: 768px) {
-  .introduction__description{
+  .introduction__description {
     font-size: var(--small-font);
     text-align: center; /* Centra el texto */
     max-width: 400px; /* Establece el máximo ancho en píxeles */
@@ -305,46 +304,43 @@ button {
   visibility: visible;
 }
 
-
 /* Page intro */
 
 .introduction {
+  min-width: 450px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px; 
+  grid-gap: 20px;
 }
 
 .introduction__name {
   grid-column: 1 / span 2;
   text-align: center;
+  font-size: 35px
 }
 .introduction__container,
-.introduction__image
-.introduction__description{
+.introduction__image .introduction__description {
   min-height: 200px;
   min-width: 200px;
-  max-width: 400px ;
+  max-width: 400px;
   max-height: 400px;
   background-color: var(--first-color);
-  grid-column: 2; 
-  grid-row: 2; 
+  grid-column: 2;
+  grid-row: 2;
   margin: 0 auto;
   position: relative;
   display: grid;
   align-items: center;
 }
-.introduction__container{
+.introduction__container {
   padding: var(--sp-0-5);
   border-radius: 50%;
-  background: linear-gradient(
-    to top,
-    var(--primary-color),
-    var(--card-color));
+  background: linear-gradient(to top, var(--primary-color), var(--card-color));
 }
-.introduction__description{
-  padding-left: 20px;
+.introduction__description {
+  display: flex;
+  align-items: center;
 }
-
 
 /* Products */
 .products__container {
@@ -615,7 +611,10 @@ button {
   :root {
     --header-height: 75px;
   }
-  .introduction__name{padding-top: 75px;}
+  .introduction__name {
+    font-size: 55px;
+    padding-top: 75px;
+  }
   .header {
     top: 0;
     bottom: unset;
@@ -632,7 +631,6 @@ button {
     display: none;
   }
 
-
   .main {
     padding-top: var(--header-height);
   }
@@ -647,7 +645,7 @@ button {
 @media (min-width: 1024px) {
   .section--title,
   .container,
-  .introduction{
+  .introduction {
     margin: 0 auto;
   }
 }

@@ -16,27 +16,35 @@
     <script src="assets/js/main.js" type="module" defer></script>
     <!-- Better alerts -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  
   </head>
   <body>
     <div class="introduction">
-    <h1 class="introduction__name"><svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 48.92 56.48"
-      class="logo--icon"
-    >
-      <path
-        fill="currentColor"
-        d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z"
-      ></path>
-    </svg> Free <i class='bx bxs-badge-dollar'></i> commerce</h1>
-    <h3 class= "introduction__description">
-      ¡Bienvenido a nuestra tienda! Aquí encontrarás una increíble selección de productos que combinan lo mejor de tres mundos: ropa, vehículos y dispositivos electrónicos. 
-    </h3>
-    <div class= "introduction__container">
-      <img class ="introduction__image" src="assets/productsPreview.png" alt="ProductsPreview">
+      <h1 class="introduction__name">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 48.92 56.48"
+          class="logo--icon"
+        >
+          <path
+            fill="currentColor"
+            d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z"
+          ></path>
+        </svg>
+        Free <i class="bx bxs-badge-dollar"></i> commerce
+      </h1>
+      <h3 class="introduction__description">
+        ¡Bienvenido a nuestra tienda! Aquí encontrarás una increíble selección
+        de productos que combinan lo mejor de tres mundos: ropa, vehículos y
+        dispositivos electrónicos.
+      </h3>
+      <div class="introduction__container">
+        <img
+          class="introduction__image"
+          src="assets/productsPreview.png"
+          alt="ProductsPreview"
+        />
+      </div>
     </div>
-  </div>
     <!-- Loader -->
     <div class="loader">
       <div class="loader__container">
@@ -72,14 +80,11 @@
           </ul>
         </div>
 
-
         <div class="nav__buttons">
           <!-- darkmode -->
           <button type="button" class="night__btn">
             <i class="bx bx-moon"></i>
           </button>
-          
-          
 
           <!-- end of darkmode -->
           <button type="button" class="nav__btn btn--cart">
@@ -88,41 +93,40 @@
           </button>
           <button type="button" class="nav__btn btn--menu">
             <i class="bx bx-grid-alt"></i>
-          </button>  
+          </button>
         </div>
       </nav>
     </header>
     <!--Main-->
     <main class="main">
-    <body>
       <section class="products section">
-        <h2 id="productos"class="products__title section--title">Productos</h2>
+        <h2 id="productos" class="products__title section--title">Productos</h2>
         <div class="products__container container"></div>
       </section>
-    </main>
-    <!-- Cart -->
-    <div class="cart">
-      <div class="cart__container">
-        <div class="cart__header">
-          <h3 class="cart__title">Carrito de compras</h3>
-          <button type="button" class="cart__btn btn--close">
-            <i class="bx bx-x"></i>
-          </button>
-        </div>
-        <div class="cart__body"></div>
-        <div class="cart__footer">
-          <div class="cart__count">
-            <span class="cart__count--text">Articulos</span>
-            <span class="cart__count--item">0</span>
+      <!-- Cart -->
+      <div class="cart">
+        <div class="cart__container">
+          <div class="cart__header">
+            <h3 class="cart__title">Carrito de compras</h3>
+            <button type="button" class="cart__btn btn--close">
+              <i class="bx bx-x"></i>
+            </button>
           </div>
-          <div class="cart__total">
-            <span class="cart__total--text">Total</span>
-            <p>$<span class="cart__total--item">0</span></p>
+          <div class="cart__body"></div>
+          <div class="cart__footer">
+            <div class="cart__count">
+              <span class="cart__count--text">Articulos</span>
+              <span class="cart__count--item">0</span>
+            </div>
+            <div class="cart__total">
+              <span class="cart__total--text">Total</span>
+              <p>$<span class="cart__total--item">0</span></p>
+            </div>
+            <button type="button" class="cart__btn btn--buy">Comprar</button>
           </div>
-          <button type="button" class="cart__btn btn--buy">Comprar</button>
         </div>
       </div>
-    </div>
+    </main>
     <!-- Footer -->
     <footer class="footer sextion">
       <div class="footer__container container">
@@ -163,4 +167,3 @@
     </footer>
   </body>
 </html>
-
