@@ -6,7 +6,6 @@ function cart(products, printProducts) {
   const countDom = document.querySelector(".cart__count--item");
   const totalDom = document.querySelector(".cart__total--item");
   const checkoutDom = document.querySelector(".btn--buy");
-
   function printCart() {
     let htmlCart = "";
     if (cart.length === 0) {
@@ -52,24 +51,32 @@ function cart(products, printProducts) {
     countDom.innerHTML = showItemsCount();
     totalDom.innerHTML = showTotal();
   }
+  //article__quantity-text
+  //itemInCart.qty == numero en cart string
 
   function addToCart(id, qty = 1) {
     const product = products.find((p) => p.id === id);
     const itemInCart = cart.find((item) => item.id === id);
-  
     if (product) {
       if (itemInCart) {
         const availableQty = product.quantity - itemInCart.qty;
         if (qty <= availableQty) {
           itemInCart.qty += qty;
           printCart();
+
         } else {
-          swal("Opps", `No puedes agregar más de ${itemInCart.qty} unidades de esto.`, "error");
+          swal(
+            "Opps",
+            `No puedes agregar más de ${itemInCart.qty} unidades de esto.`,
+            "error"
+          );
         }
       } else {
         if (qty <= product.quantity) {
           cart.push({ id, qty });
           printCart();
+          printProducts();
+
         } else {
           swal("Agotado", `Parece que esto se ha vendido bien`, "error");
         }
@@ -78,18 +85,32 @@ function cart(products, printProducts) {
       swal("Opps", "El producto no existe en el inventario.", "error");
     }
   }
+  function showingQty(id) {
+    const itemFinded = cart.find((i) => i.id === id);
+    const product = products.find((p) => p.id === id);
+    product.showingQuantity=  product.quantity - itemFinded.qty
+    printProducts()
+    printCart();
+  }
   function removeFromCart(id, qty = 1) {
     const itemFinded = cart.find((i) => i.id === id);
     const result = itemFinded.qty - qty;
     if (result > 0) {
       itemFinded.qty -= qty;
     } else {
+      const product = products.find((p) => p.id === id);
+      product.showingQuantity=  product.quantity
       cart = cart.filter((i) => i.id !== id);
     }
+    printProducts()
     printCart();
   }
   function deleteFromCart(id) {
-    cart = cart.filter((i) => i.id !== id);
+    const product = products.find((p) => p.id === id);
+    product.showingQuantity=  product.quantity
+    
+    cart = cart.filter((i) => i.id !== id)
+    printProducts()
     printCart();
   }
 
@@ -109,14 +130,20 @@ function cart(products, printProducts) {
     return total;
   }
   function checkout() {
+    // verificar si esta vacio el carrito
+    if (cart.length === 0) {
+      swal("Acción invalida", "No hay artículos en el carrito.", "error");
+      return;
+    }
     for (const item of cart) {
       const productFinded = products.find((p) => p.id === item.id);
       productFinded.quantity -= item.qty;
+
     }
     cart = [];
     printCart();
     printProducts();
-    swal("Gracias por su compra","Su compra ha sido satisfactiora","success");
+    swal("Gracias por su compra", "Su compra ha sido satisfactiora", "success");
   }
 
   printCart();
@@ -124,6 +151,7 @@ function cart(products, printProducts) {
     if (e.target.closest(".add--to--cart")) {
       const id = +e.target.closest(".add--to--cart").dataset.id;
       addToCart(id);
+      showingQty(id);
     }
   });
 
@@ -131,11 +159,13 @@ function cart(products, printProducts) {
     if (e.target.closest(".article--minus")) {
       const id = +e.target.closest(".article--minus").dataset.id;
       removeFromCart(id);
+      showingQty(id);
     }
 
     if (e.target.closest(".article--plus")) {
       const id = +e.target.closest(".article--plus").dataset.id;
       addToCart(id);
+      showingQty(id);
     }
 
     if (e.target.closest(".remove-from-cart")) {
@@ -145,7 +175,9 @@ function cart(products, printProducts) {
   });
   checkoutDom.addEventListener("click", function () {
     checkout();
+    
   });
 }
+
 
 export default cart;

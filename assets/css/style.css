@@ -242,6 +242,14 @@ button {
   .hide--menu {
     bottom: var(--header-height);
   }
+  .cart__title {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  .cart__empty--text {
+    font-size: 16px;
+    white-space: nowrap;
+  }
 }
 .nav__menu .btn--close {
   position: absolute;
@@ -316,7 +324,7 @@ button {
 .introduction__name {
   grid-column: 1 / span 2;
   text-align: center;
-  font-size: 35px
+  font-size: 35px;
 }
 .introduction__container,
 .introduction__image .introduction__description {
@@ -557,7 +565,6 @@ button {
   grid-column: span 4;
   background-color: var(--title-color);
   color: var(--bg-color);
-  padding: var(--sp-1);
 }
 
 /* Footer */

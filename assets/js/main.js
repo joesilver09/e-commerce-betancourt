@@ -2,7 +2,7 @@ import loader from "./components/loader.js";
 import showMenu from "./components/showMenu.js";
 import showCart from "./components/showCart.js";
 import cart from "./components/cart.js";
-import products from "./components/products.js";
+import products from"./components/products.js"
 showMenu();
 showCart();
 /*Ocultar loader*/
@@ -11,8 +11,14 @@ loader();
 //  FUNCION MOSTRAR PRODUCTOS
 function printProducts() {
   const productsHTML = document.querySelector(".products__container");
-  let classprod = "";
+  let classprod="";
+  
   for (const product of products) {
+//     if(false){
+//       for(const product of products){
+//       product.showingQuantity = 'x'}
+// console.log(classprod)
+//     }
     classprod += `
 <article class="product">
 <div class="product__image">
@@ -26,7 +32,7 @@ function printProducts() {
     <i class="bx bx-cart-add"></i>
   </button>
   <span class="product__price">$${product.price}</span>
-  <span class="product__stock">Disponibles:${product.quantity}</span>
+  <span class="product__stock">Disponibles:${product.showingQuantity}</span>
   <h3 class="product__title">${product.name}</h3>
 </div>
 </article>`;
@@ -36,14 +42,15 @@ function printProducts() {
 printProducts();
 cart(products, printProducts);
 
+
 // Dark Mode
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   const button = document.querySelector(".night__btn");
   const body = document.body;
-
-  button.addEventListener("click", function () {
+  
+  button.addEventListener("click", function() {
     body.classList.toggle("dark-mode");
-
+    
     const icon = button.querySelector("i");
     if (body.classList.contains("dark-mode")) {
       icon.classList.remove("bx-moon");

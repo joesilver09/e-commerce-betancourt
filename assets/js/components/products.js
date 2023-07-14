@@ -220,5 +220,7 @@
             "Este sweater con cuello redondo está hecho de una mezcla suave de lana y acrílico para mayor comodidad y calidez. Es ideal para un look casual y cómodo.",
         },
       ];
-      
+      for (const product of products) {
+        product.showingQuantity = product.quantity;
+      }
 export default products
