@@ -10,16 +10,6 @@
           quantity: 5,
           description:
             "Esta camiseta básica presenta un corte regular y un cuello redondo clásico. Es ideal para el uso diario y se puede combinar con una amplia variedad de looks.",
-        },{
-          id: 99,
-          name: "Venelly Academlo Sport 2023",
-          price: 237000,
-          image:
-            "https://png.pngtree.com/png-clipart/20180613/ourmid/pngtree-stylish-luxury-red-sports-car-simulation-illustration-png-image_4484890.png",
-          category: "Vehiculo",
-          quantity: 2,
-          description:
-            "Solo existen 2 en el mundo",
         },
         {
           id: 2,
@@ -176,17 +166,6 @@
             "Este sweater de cuello alto está hecho de una mezcla suave de lana y acrílico para mayor comodidad y calidez. Es ideal para un look elegante y cálido.",
         },
         {
-          id: 35,
-          name: "PC Milkyway XYZ para programmar a otro nivel",
-          price: 9780,
-          image:
-            "https://storage-asset.msi.com/global/picture/image/feature/mb/Z790/mpg_z790_edge_wifi_ddr4/msi-z790-edge-wifi-ddr4-motherboard-and-componts.png",
-          category: "Electronicos",
-          quantity: 12,
-          description:
-            "Bienvenido a la mejor experiencia en PCs",
-        },
-        {
           id: 16,
           name: "Sweater de tejido fino",
           price: 20,
@@ -218,6 +197,83 @@
           quantity: 4,
           description:
             "Este sweater con cuello redondo está hecho de una mezcla suave de lana y acrílico para mayor comodidad y calidez. Es ideal para un look casual y cómodo.",
+        },
+        {
+          id: 30,
+          name: "Somesung Universe Y9",
+          price: 500,
+          image:
+            "https://ep01.epimg.net/estaticos/arc/2020/06/samsung-gamamedia/images/galaxyA21s.png",
+          category: "celular",
+          quantity: 14,
+          description:
+            "Celular inteligente con Android 15.9 incorporado",
+        },
+        {
+          id: 31,
+          name: "Somesung Altaria",
+          price: 930,
+          image:
+            "https://i.ebayimg.com/images/g/U3kAAOSwUndkBfi3/s-l1200.webp",
+          category: "celular",
+          quantity: 7,
+          description:
+            "pantalla super wide con 360px.",
+        },{
+          id: 32,
+          name: "Somesung Academlo gold",
+          price: 3000,
+          image:
+            "https://phoenix-galerie.de/wp-content/uploads/2020/10/24K-Gold-Iphone.png",
+          category: "celular",
+          quantity: 3,
+          description:
+          "Limitado"
+        },{
+          id: 38,
+          name: "PC Milkyway X para programadores senior",
+          price: 9780,
+          image:
+            "https://storage-asset.msi.com/global/picture/image/feature/mb/Z790/mpg_z790_edge_wifi_ddr4/msi-z790-edge-wifi-ddr4-motherboard-and-componts.png",
+          category: "PC",
+          quantity: 12,
+          description:
+            "Bienvenido a la mejor experiencia en PCs",
+        },
+        {
+          id: 55,
+          name: "Moto Savage Ride 2023",
+          price: 70000,
+          image:
+            "https://freepngimg.com/download/motorcycle/36-moto-png-image-motorcycle-png.png",
+          category: "vehiculo",
+          quantity: 7,
+          description:
+            "Moderna y elegante como un elefante",
+        },
+        
+        
+        
+        {
+          id: 56,
+          name: "Moto GT Racing R 2023",
+          price: 120000,
+          image:
+            "https://www.pngplay.com/wp-content/uploads/13/Moto-GP-Transparent-PNG.png",
+          category: "vehiculo",
+          quantity: 2,
+          description:
+            "No te vallas a estrellar",
+        },{
+          id: 99,
+          name: "Venelly Academlo Sport 2023",
+          price: 237000,
+          image:
+            "https://png.pngtree.com/png-clipart/20180613/ourmid/pngtree-stylish-luxury-red-sports-car-simulation-illustration-png-image_4484890.png",
+          category: "Vehiculo",
+          quantity: 2,
+          description:
+            "Solo existen 2 en el mundo",
         },
       ];
       for (const product of products) {

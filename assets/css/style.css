@@ -221,6 +221,7 @@ button {
     overflow: hidden; /* Oculta el texto que exceda el ancho del contenedor */
     text-overflow: ellipsis;
   }
+  .product__price{font-size: 17px}
   .nav__menu {
     position: fixed;
     left: 0;
